@@ -47,8 +47,6 @@ describe('URL shortener', () => {
   })
 
   it('should POST the inputted data', () => {
-    
-    // cy.visit('http://localhost:3000')
 
     cy.get('input[name="title"]').type('Twitter').should('have.value', 'Twitter')
     cy.get('input[name="urlToShorten"]').type('Twitter.com/?DSFGsdfsd').should('have.value', 'Twitter.com/?DSFGsdfsd')
