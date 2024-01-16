@@ -51,6 +51,7 @@ describe('URL shortener', () => {
     cy.get('input[name="title"]').type('Twitter').should('have.value', 'Twitter')
     cy.get('input[name="urlToShorten"]').type('Twitter.com/?DSFGsdfsd').should('have.value', 'Twitter.com/?DSFGsdfsd')
     cy.get('button').click()
+    cy.get('.url-container').children().should('have.length', 4)
 
     cy.get('.url-container').last().contains('Twitter')
     cy.get('.url-container').last().contains('Twitter.com/?DSFGsdfsd')
